@@ -26,3 +26,5 @@ proguard/
 *.log
 
 .build/
+
+*.swp
