@@ -34,9 +34,11 @@ void setup()
 }
 void loop()
 {
+    LED_CLS();
     LED_P8x16Str(23,0,"welcome to");
     LED_P8x16Str(40,2,"Smart");
-    LED_P8x16Str(20,4,"Prototyping");
+    /* LED_P8x16Str(20,4,"Prototyping"); */
+    LED_PrintValueF(20,4,255,1);
 }
 
 
