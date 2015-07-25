@@ -36,6 +36,8 @@ void setup() {
     Serial.begin(9600);
     while (!Serial);
 
+    pinMode(4, INPUT_PULLUP);
+
     Serial.println("Adafruit 2.2\" SPI TFT Test!"); 
 
     tft.begin();
@@ -63,7 +65,7 @@ void loop(void) {
     tft.println(lastmilli);
     tft.setCursor(0, 0);
     tft.setTextColor(ILI9340_WHITE);  
-    lastmilli = 123;
+    lastmilli = digitalRead(4);
     tft.println(lastmilli);
 
     tft.setCursor(0, charheight*textgross+abstandgross);
@@ -71,7 +73,6 @@ void loop(void) {
     tft.println(VRx);
     tft.setCursor(0, charheight*textgross+abstandgross);
     tft.setTextColor(ILI9340_WHITE);  
-    lastmilli = 123;
     tft.println(VRx);
 
     tft.setCursor(0, charheight*textgross*2+abstandgross);
@@ -79,7 +80,6 @@ void loop(void) {
     tft.println(VRy);
     tft.setCursor(0, charheight*textgross*2+abstandgross);
     tft.setTextColor(ILI9340_WHITE);  
-    lastmilli = 123;
     tft.println(VRy);
     /* tft.setCursor(0, charheight*textgross+2); */
     /* tft.setTextSize(textklein); */
